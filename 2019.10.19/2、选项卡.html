@@ -70,11 +70,9 @@
 
         // 2.给相应的元素绑定相应的事件
         for(var i=0;i<navList.length;i++){
-                console.log(i)
                 // 当for循环执行每一轮的时候，给当前li增加一个属性（增加键值对），属性值是当前的i
-                navList[i].myIndex = i;
+            navList[i].myIndex = i;
             navList[i].onclick=function(){
-                console.log(i)
                 changeTab(this.myIndex)
 
                 // changeTab(i) 第二种解决方式
