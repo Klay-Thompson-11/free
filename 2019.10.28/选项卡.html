@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .active{
+        background:darkgray;
+    }
+    #box button{
+        height: 50px;
+        width: 100px;
+        font-size: 30px;
+        font-family: serif;
+        box-shadow: steelblue;
+
+    }
+    #box div{
+        width: 310px;
+        height: 300px;
+        border: 2px solid snow;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+        font-family: serif;
+        text-shadow:2px;
+        display: none;
+        background:darkseagreen;
+    }
+    #box div.show{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <button class="active" index='0'>one
+        </button>
+        <button index='1'>two</button>
+        <button index='3'>three</button>
+        <div class="show">6</div>
+        <div>66</div>
+        <div>666</div>
+    </div>
+    <script>
+    const btns=document.querySelectorAll('button');
+    const divs=document.querySelectorAll('#box div');
+    let prevIndex=0;
+    for(var i=0;i<btns.length;i++){
+        btns[i].index=i;
+        btns[i].onclick=function(){
+            btns[prevIndex].className='';
+            divs[prevIndex].className='';
+            this.className='active';
+            divs[this.index].className='show';
+            prevIndex=this.index;
+        }
+    }
+    </script>
+</body>
+</html>
